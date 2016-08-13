@@ -11,12 +11,13 @@ class AboutStructuralTypes extends KoanSuite {
 
     val p = new Person("Lou")
 
-    sayHello(p) should be(__)
+    sayHello(p) should be("Hello, Lou")
 
-    class Person2
+    class Person2 {
+      def name = "Fred"
+    }
     val p2 = new Person2
-    meditate
-    //sayHello(p2) should be(__)
+    sayHello(p2) should be("Hello, Fred")
   }
 
   koan ("defined structural type") {
@@ -27,7 +28,7 @@ class AboutStructuralTypes extends KoanSuite {
     case class Person(name: String)
 
     val p = new Person("Lou")
-    sayHello(p) should be(__)
+    sayHello(p) should be("Hello, Lou")
   }
 
 }
